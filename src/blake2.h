@@ -505,7 +505,7 @@ namespace Blake2_NS
 		{
 			const Loader<uint64_t> m(static_cast<const Byte *>(data.data() + (iter * BLOCK_SIZE)));
 
-			m_sizeCounter += (BLOCK_SIZE - paddingLen);
+			m_sizeCounter += (static_cast<uint64_t>(BLOCK_SIZE) - paddingLen);
 
 			uint64_t v[16] =
 			{

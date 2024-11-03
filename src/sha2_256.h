@@ -340,7 +340,7 @@ namespace SHA2_256_NS
 
 		// append paddings
 		const auto len = static_cast<int>(((2 * BLOCK_SIZE) - (m_buffer.size() + 8)) % BLOCK_SIZE);
-		m_buffer.fill(0, (len + 8));
+		m_buffer.fill(0, (static_cast<Hash::IndexType>(len) + 8));
 
 		// append size in bits
 		const uint64_t sizeCounterBits = m_sizeCounter * 8;
